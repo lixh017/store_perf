@@ -1,0 +1,23 @@
+# $YeeStor: autotest/conf,v 1.0 2014/11/28 $
+# autotest configuration file
+
+# Modified by      Date              Comments
+# Li Gang          2015-11-12        Add new error const for NAS, also added new error consts for service,cache
+
+
+os=`uname`
+run_result_dir="iozone_test_task"
+file_stdout="${run_result_dir}/prove.log"
+
+#host_list="172.16.131.212,172.16.131.147,172.16.131.212"
+#host_list=
+#shared='yes'  # yes or no
+
+#fs_type='nfs4' #fstype: xfs|YeeOS|YeeFS|YeeSAN
+total_size='96G'
+test_dir='/media/iozonetest'
+
+###run test config###
+
+run_test_config='1024k-rw-1,8,16|64k-rw-1,8'
+

@@ -1,0 +1,22 @@
+# $YeeOS: fio_test/conf,v 1.0 2017/10/18 $
+# autotest configuration file
+#
+os=`uname`
+run_result_dir="./fio_test_task"
+file_stdout="${run_result_dir}/prove.log"
+
+
+###run test config###
+####default ####
+shared='yes'
+run_time='10'  # default: 300s 
+#file_size='20G'     # default is null ,if you spciet
+cached_io='False'  # default is False 
+ioengine='libaio'
+#shared='yes'
+
+###req opt###
+test_file='/dev/sdb,/dev/sdc'  # must specify
+host_list='172.16.131.212,172.16.131.113' # defualt localhost
+run_type='para'  #para|seq
+run_test_config='4k-randrw-1,8-32-50|64k-read-1,8-32-0' ## "rs-iotype-jobs-iodepth-rwmix"

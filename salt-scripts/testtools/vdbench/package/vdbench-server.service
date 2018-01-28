@@ -1,0 +1,18 @@
+[Unit]
+Description=fio -- a base service for vdbench rsh modle
+Wants=network.target network-online.target network.service rc-local.service
+After=network.target network-online.target network.service rc-local.service
+
+[Service]
+Type=forking
+ExecStart=/bin/bash /opt/start_vdbench_rsh.sh
+ExecReload=/usr/bin/killall -9 java ; /bin/bash /opt/start_vdbench_rsh.sh
+ExecStop=/usr/bin/killall -9 java
+Restart=always
+# supress to log debug and error output also to /var/log/messages
+StandardOutput=null
+StandardError=null
+KillSignal=SIGKILL
+
+[Install]
+WantedBy=basic.target

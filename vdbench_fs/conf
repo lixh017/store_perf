@@ -1,0 +1,31 @@
+# $YeeOS: fio_test/conf,v 1.0 2017/10/18 $
+# autotest configuration file
+#
+os=`uname`
+run_result_dir="./vdbench_test_task"
+file_stdout="${run_result_dir}/prove.log"
+
+
+###run test config###
+####default ####
+test_type="fs"  #fs|lun
+serv_type='ssh' # 'ssh|vdbench|rsh'
+run_time='20'  # default: 300s 
+#file_size='20G'     # default is null ,if you spciet
+cached_io='False'  # default is False 
+#shared='yes'
+
+
+###req opt###
+test_dir="/mnt/yfs"
+host_list='172.16.131.212,172.16.131.113' # defualt localhost
+depth=1
+width=1
+files=100
+file_size=2M
+fileselect='sequential'   #sequential or random
+shared='no'
+run_type='para'  #para|seq
+
+#runconfig 
+run_test_config='1024k-write-32-0|64k-read-32-0' ## "rs-iotype-thread-rwmix"
